@@ -12,10 +12,12 @@ class Expenses(models.Model):
     #expense_value = models.FloatField()
     #expense_currency = models.DecimalField(max_digits=6,decimal_places=2)
 
-    timestamp_added = models.DateTimeField(auto_now_add=True)
+    expense_date = models.DateField(auto_now=False)
+
+    expense_category = models.CharField(max_length=50)
 
     def __str__(self) -> str:
-        return f"{self.expense_currency} {self.expense_value} - {self.expense_short}" 
+        return f"{self.expense_date}: {self.expense_value} - {self.expense_short} - {self.expense_category}" 
 
 class Expense_Categories(models.Model):
     expense_type = models.CharField(max_length=25)

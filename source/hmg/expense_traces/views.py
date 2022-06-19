@@ -10,13 +10,14 @@ def index(request):
 def expense_categories(request):
     '''List all expense categories here render'''
     expense_categories = Expense_Categories.objects.order_by('id')
-    print(expense_categories)
     context = {'categories':expense_categories}
     return render(request,'expense_categories.html',context)
 
 def expenses(request):
     '''Render all expenses'''
-    return render(request, 'expenses.html')
+    expenses = Expenses.objects.order_by('expense_date')
+    context = {'expenses': expenses}
+    return render(request, 'expenses.html', context)
 
 def add_expense(request):
     '''Add Expenses here'''
