@@ -19,3 +19,6 @@ class Expenses(models.Model):
 
 class Expense_Categories(models.Model):
     expense_type = models.CharField(max_length=25)
+    
+    def __str__(self) -> str:
+        return f"{self.expense_type}"
