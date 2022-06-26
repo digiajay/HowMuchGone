@@ -12,7 +12,7 @@ class Expenses(models.Model):
     #expense_value = models.FloatField()
     #expense_currency = models.DecimalField(max_digits=6,decimal_places=2)
 
-    expense_date = models.DateField(auto_now=False)
+    expense_date = models.DateField(auto_now=True)
 
     expense_category = models.CharField(max_length=50)
 

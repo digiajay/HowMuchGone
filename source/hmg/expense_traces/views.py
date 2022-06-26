@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+
+from .forms import ExpensesForm
 
 
 from .models import Expenses, Expense_Categories
@@ -21,4 +23,12 @@ def expenses(request):
 
 def add_expense(request):
     '''Add Expenses here'''
-    return render(request, 'add_expense.html')
+    if request.method != 'POST':
+        form = ExpensesForm()
+    else:
+        form = ExpensesForm(data = request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('hmg:expenses')
+    context = {'form':form}
+    return render(request, 'add_expense.html', context)
