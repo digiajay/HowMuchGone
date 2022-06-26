@@ -1,5 +1,5 @@
 <h1>Expense Tracker</h1>
 <p>
-    <a href=""> All Expenses </a> | <a href=""> Add new expense <a>
+    <a href="{% url 'hmg:expenses' %}"> All Expenses </a> | <a href="{% url 'hmg:expense_categories' %}">Categories</a>
 </p>
 {% block content %}{% endblock content %}

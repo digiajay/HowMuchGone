@@ -1,7 +1,15 @@
+from tkinter import CASCADE
 from django.db import models
 from djmoney.models.fields import MoneyField
 
 # Create your models here.
+
+class Expense_Categories(models.Model):
+    expense_type = models.CharField(max_length=25)
+    
+    def __str__(self) -> str:
+        return f"{self.expense_type}"
+        
 class Expenses(models.Model):
     '''Adding model for daily expense tracker'''
     ''' A short description of the expense'''
@@ -14,13 +22,7 @@ class Expenses(models.Model):
 
     expense_date = models.DateField(auto_now=True)
 
-    expense_category = models.CharField(max_length=50)
-
+    #expense_category = models.CharField(max_length=50)
+    expense_category = models.ForeignKey(Expense_Categories, on_delete=models.CASCADE)
     def __str__(self) -> str:
         return f"{self.expense_date}: {self.expense_value} - {self.expense_short} - {self.expense_category}" 
-
-class Expense_Categories(models.Model):
-    expense_type = models.CharField(max_length=25)
-    
-    def __str__(self) -> str:
-        return f"{self.expense_type}"

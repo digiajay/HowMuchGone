@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Expenses Categories</h2>
+<h2>Categories</h2>
 
 <ul>
 {% for category in categories %}
     <li>{{category}}</li>
 {% endfor %}
 </ul>
+
+<a href="{% url 'hmg:add_expense_category' %}">Add Categories<a>
 
 {% endblock content %}

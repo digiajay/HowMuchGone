@@ -11,7 +11,7 @@ class ExpensesForm(forms.ModelForm):
         labels = {
                     'Description':'Enter Short Description',
                     'Value':'Enter value of expenese',
-                    'Category':'Enter expense category'
+                    'Category':'Enter expense category',
                 }
 
 class CategoryForm(forms.ModelForm):
