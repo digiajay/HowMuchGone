@@ -13,3 +13,11 @@ class ExpensesForm(forms.ModelForm):
                     'Value':'Enter value of expenese',
                     'Category':'Enter expense category'
                 }
+
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Expense_Categories
+        fields = ['expense_type']
+        labels = {
+                    'Category':'Add new category here'
+                }

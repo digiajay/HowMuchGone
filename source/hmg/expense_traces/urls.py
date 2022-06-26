@@ -16,6 +16,7 @@ urlpatterns = [
     #'''Add New Expense'''
     path('add_expense',views.add_expense,name='add_expense'),
 
-    
+    #'''Add New Category'''
+    path('add_category',views.add_expense_category,name='add_expense_category')    
 
 ]
