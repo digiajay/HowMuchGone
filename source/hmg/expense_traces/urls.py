@@ -2,7 +2,7 @@ from unicodedata import name
 from django.urls import path
 from . import views
 
-app_name = 'hmg'
+app_name = 'expense_traces'
 
 urlpatterns = [
     path('', views.index, name='index'),

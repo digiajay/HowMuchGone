@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # My Apps
     'expense_traces',
+    'users',
 ]
 
 MIDDLEWARE = [

@@ -29,7 +29,7 @@ def add_expense(request):
         form = ExpensesForm(data = request.POST)
         if form.is_valid():
             form.save()
-            return redirect('hmg:expenses')
+            return redirect('expense_traces:expenses')
     context = {'form':form}
     return render(request, 'add_expense.html', context)
 
@@ -41,6 +41,6 @@ def add_expense_category(request):
         form = CategoryForm(data = request.POST)
         if form.is_valid():
             form.save()
-            return redirect('hmg:expense_categories')
+            return redirect('expense_traces:expense_categories')
     context = {'form':form}
     return render(request,'add_categories.html',context)

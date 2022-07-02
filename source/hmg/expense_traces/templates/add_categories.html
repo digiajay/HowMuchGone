@@ -4,7 +4,7 @@
 <h2>Add Expense Category</h2>
 
 
-<form action = "{% url 'hmg:add_expense_category' %}" method ='post'>
+<form action = "{% url 'expense_traces:add_expense_category' %}" method ='post'>
     {% csrf_token %}
     {{form.as_p}}
     <button name='submit'>Add Category</button>
